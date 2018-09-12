@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+import MealsStore from './stores/MealsStore';
+import { Provider } from 'mobx-react';
+import DevTools from 'mobx-react-devtools';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const mealsStore = new MealsStore();
+
+ReactDOM.render(
+    <Provider MealsStore={mealsStore}>
+        <React.Fragment>
+            <App />
+            <DevTools />
+        </React.Fragment>
+    </Provider>, 
+    document.getElementById('root'));
+
 registerServiceWorker();

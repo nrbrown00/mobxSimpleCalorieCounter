@@ -1,0 +1,6 @@
+{
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "editor.tabSize": 4,
+    "workbench.editor.tabSizing": 4,
+    "editor.detectIndentation": false
+}
