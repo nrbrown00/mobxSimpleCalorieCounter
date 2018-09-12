@@ -11,7 +11,7 @@ import DevTools from 'mobx-react-devtools';
 const mealsStore = new MealsStore();
 
 ReactDOM.render(
-    <Provider MealsStore={mealsStore}>
+    <Provider mealsStore={mealsStore}>
         <React.Fragment>
             <App />
             <DevTools />

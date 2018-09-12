@@ -8,4 +8,26 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width:  40em;
+    width:100%;
+    margin: 1em auto;
+    overflow: hidden;
+}
+
+.content {
+    padding: 1em;
+    margin: .5em;
+    overflow: hidden;
+    flex-grow:1;
+    overflow-y:auto;
+    min-width: 500px;
 }
