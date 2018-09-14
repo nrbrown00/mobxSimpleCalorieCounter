@@ -17,17 +17,17 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    max-width:  40em;
+    max-width:  30em;
     width:100%;
     margin: 1em auto;
     overflow: hidden;
+    overflow-x: auto;
 }
 
 .content {
     padding: 1em;
     margin: .5em;
     overflow: hidden;
-    flex-grow:1;
     overflow-y:auto;
-    min-width: 500px;
+    min-width: 275px;
 }

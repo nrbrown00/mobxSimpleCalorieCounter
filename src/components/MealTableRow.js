@@ -18,9 +18,8 @@ class MealTableRow extends Component {
                     <Checkbox 
                         checked={this.props.meal.isSelected} 
                         onChange={this.handleChange}/>
-                    
                 </TableCell>
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" style={{maxWidth: '150px', overflow: 'hidden'}}>
                     {this.props.meal.name}
                 </TableCell>
                 <TableCell numeric>{this.props.meal.calories}</TableCell>

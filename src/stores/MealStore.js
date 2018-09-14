@@ -5,11 +5,12 @@ class MealStore {
     calories;
     date;
     id;
+    
     constructor(meal) {
         meal = meal || {};
         this.name = meal.name;
         this.calories = meal.calories;
-        this.date = meal.date || new Date();
+        this.date = new Date(meal.date);
         this.id = getId();
     }
 

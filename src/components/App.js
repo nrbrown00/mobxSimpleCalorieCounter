@@ -5,8 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
 import AddMeal from './AddMeal';
+import DateSelection from './DateSelection';
 import MealTable from './MealTable';
-
+import Progress from './Progress';
 
 
 class App extends Component {
@@ -23,6 +24,8 @@ class App extends Component {
                 <div className="main">
                     <Paper className="content">
                         <AddMeal />
+                        <DateSelection />
+                        <Progress />
                         <MealTable />
                     </Paper>
                 </div>    

@@ -24,30 +24,35 @@ class MealTable extends Component {
 
     render() {
         const meals = this.props.mealsStore.mealsForDay;
+        const deleteButtonDisabled = !this.props.mealsStore.someMealsSelected;
+
         return (
-            <Table className="auto-scroll">
-                <TableHead>
-                <TableRow>
-                    <TableCell padding="none" style={{maxWidth: '1em'}}>
-                        <IconButton variant="fab" 
-                                aria-label="Delete Selected"
-                                onClick={this.handleDelete}
-                                disabled={!this.props.mealsStore.someMealsSelected}>
-                            <Icon>delete</Icon>    
-                        </IconButton>
-                    </TableCell>
-                    <TableCell>Meal</TableCell>
-                    <TableCell numeric>Calories</TableCell>
-                </TableRow>
-                </TableHead>
-                <TableBody>
-                {meals.map(meal => {
-                    return (
-                        <MealTableRow meal={meal} key={meal.id}/>
-                    );
-                })}
-                </TableBody>
-            </Table>
+            <React.Fragment>
+                <Table>
+                    <TableHead>
+                    <TableRow>
+                        <TableCell padding="none" style={{maxWidth: '1em'}}>
+                            <IconButton variant="fab" 
+                                    aria-label="Delete Selected"
+                                    onClick={this.handleDelete}
+                                    disabled={deleteButtonDisabled}>
+                                <Icon>delete</Icon>    
+                            </IconButton>
+                        </TableCell>
+                        <TableCell>Meal</TableCell>
+                        <TableCell numeric>Calories</TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {meals.map(meal => {
+                        return (
+                            <MealTableRow meal={meal} key={meal.id}/>
+                        );
+                    })}
+                    </TableBody>
+                </Table>
+                {meals.length > 0 ? undefined: <div>No meals added for this day!</div>}
+            </React.Fragment>
         )
     };
 };
