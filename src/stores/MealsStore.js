@@ -69,8 +69,6 @@ class MealsStore {
             return;
         }
         MealsUtil.GetMeals().then(this.loadMealJson);
-
-        this.meals.push(new MealStore({name: 'Ice Cream', calories: 100}));
     };
 
     @action
@@ -82,6 +80,7 @@ class MealsStore {
         });
 
         this.meals = mealStores;
+        this.isLoaded = true;
     };
     
     @computed
